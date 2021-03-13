@@ -2,13 +2,15 @@ import React, { useState, useEffect } from "react"
 import { connect } from "react-redux"
 
 import { newListing } from "../actions/listings"
+import { fetchTags } from "../actions/tags"
 
 function ListingForm(props) {
   const [form, setForm] = useState({})
   const [tag, setTag] = useState(0)
   const [type, setType ] = useState(localStorage.getItem("type"))
+  const [image, setImage ] = useState(null);
 
-  const tags = props.tags
+  const tags = props.tags;
 
   const handleChange = (e) => {
     setForm({
@@ -18,13 +20,27 @@ function ListingForm(props) {
   }
 
   useEffect(() => {
-    if(form.type){
-      setType(form.type)
-    }
-  }, [form])
+    props.dispatch(fetchTags())
+  },[]
+  )
+
+  useEffect(() => {
+      if(form.type){
+        setType(form.type)
+      }
+    }, [form]
+  )
 
   const handleSelect = (e) => {
     setTag(e.target.value)
+  }
+
+  const handleFileSelect = (e) => {
+    if (e.target.files.length === 1) {
+      setImage(e.target.files[0]);
+    } else {
+      setImage(null);
+    }
   }
 
   const handleSubmit = (e) => {
@@ -36,6 +52,19 @@ function ListingForm(props) {
       time: new Date()
     }
 
+    const formData = new FormData();
+
+    formData.append("tagId", tag);
+    formData.append("title", newestListing.title);
+    formData.append("description", newestListing.description);
+    formData.append("type", newestListing.type);
+    formData.append("user_id", newestListing.user_id);
+    formData.append("time", newestListing.time.toISOString());
+
+    if (image !== null) {
+      formData.append("img", image);
+    }
+
     if (tag == 0) {
       alert("Please select a category.")
     } else if (!form.type) {
@@ -44,22 +73,23 @@ function ListingForm(props) {
       alert("Please add a title to your post.")
     } else if(!form.description){
       alert("Please add a description to your post.")
-    } else {
-      const newestListing = {
-        ...form,
-        user_id: props.auth.user.id,
-        time: new Date(),
-      }
-
-      const data = {
-        listing: newestListing,
-        tagId: tag,
-      }
-
-      props.dispatch(newListing(data))
-
-      props.history.push("/")
     }
+    // } else {
+    //   const newestListing = {
+    //     ...form,
+    //     user_id: props.auth.user.id,
+    //     time: new Date(),
+    //   }
+
+      // const data = {
+      //   listing: newestListing,
+      //   tagId: tag,
+      // }
+
+    props.dispatch(newListing(formData))
+
+    props.history.push("/")
+
   }
 
   return (
@@ -68,6 +98,7 @@ function ListingForm(props) {
         <div className="add-listing-page add-listing-center add-listing-centering">
           <h1 className="center-text">Add a Listing</h1>
           <div className="auto-margin">
+
             <form className="listingForm">
               <div className="auto-margin2">
                 <label className="has-text-weight-bold is-size-4">Category Tags:</label>
@@ -146,6 +177,10 @@ function ListingForm(props) {
               placeholder="Add any details of what you're seeking/offering."
             />
           </form>
+          <div>Add image:
+              <input onChange={handleFileSelect} type='file' />
+          </div>
+
           <div className="buttons has-addons">
             <button
               className="button is-primary is-fullwidth is-size-5"
