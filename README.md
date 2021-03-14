@@ -1,6 +1,6 @@
 # Jack Of All Trades
 
-## Final Group Project
+## Final Group Project (Dev Academy)
 
 Goods and services are expensive... why not offer a way for the community to come together and trade skills, knowledge and home baked goods.
 
@@ -24,32 +24,35 @@ This is a list of tech we will be using throughout our project:
 * [React-paginate](https://npmjs.com/package/react-paginate)
 
 
+I thought it would be nice if our customers could upload photos to show what they can offer or something else. So I implemented image upload using Multer and Express.
+
+[Multer] (https://www.npmjs.com/package/multer)
 ## User Stories
 
 ### MVP
 
 As a non-registered user:
   * I want to register for the App under my name.
-  
+
 As a registered user:
   * I want to log in with my registered details.
-  * I want to browse "I'm looking for. . ." to see what goods/services are needed in my community. 
-  * I want to browse "I can offer. . ." to see what other goods/services are offered in my community. 
+  * I want to browse "I'm looking for. . ." to see what goods/services are needed in my community.
+  * I want to browse "I can offer. . ." to see what other goods/services are offered in my community.
   * On either page, I want to filter via tag/category to find a specific good/service.
-  * I want to create and add a new post for the "I'm looking for. . ." section of the site and provide a MAXIMUM of one tag. 
-  * I want to create and add a new post for the "I can offer. . ." section of the site and provide a MAXIMUM of one tag. 
+  * I want to create and add a new post for the "I'm looking for. . ." section of the site and provide a MAXIMUM of one tag.
+  * I want to create and add a new post for the "I can offer. . ." section of the site and provide a MAXIMUM of one tag.
   * I want to view my user profile via a button on the nav bar and see a list of all of my current post(s).
   * I want to update/edit my current post(s) through my profile.
   * I want to delete my current post(s) through my profile.
-  * I want to comment on "I'm looking for. . ." listings to let the author know I am interested in trading for the good/service they require. 
-  * I want to comment on "I can offer . ." listings, to let the author know I am interested the good/service they're offering. 
- 
+  * I want to comment on "I'm looking for. . ." listings to let the author know I am interested in trading for the good/service they require.
+  * I want to comment on "I can offer . ." listings, to let the author know I am interested the good/service they're offering.
+
 
 ### Stretch
 
 As a registered user:
-  * I want to create and add a new post for the "I'm looking for. . ." section on the site and provide a MINIMUM of one tag. 
-  * I want to create and add a new post for the "I can offer. . ." section on the site and provide a MINIMUM of one tag. 
+  * I want to create and add a new post for the "I'm looking for. . ." section on the site and provide a MINIMUM of one tag.
+  * I want to create and add a new post for the "I can offer. . ." section on the site and provide a MINIMUM of one tag.
   * I want to view posts by region in NZ, not just my local community.
   * I want to browse "Free stuff" on the site, to see what goods people are offering free of charge in my community.
   * I want to create and add a new post for "Free stuff" I am offering on the site.
@@ -61,7 +64,7 @@ As a registered user:
   * I want to be able to edit my user profile details (name, location, phone number etc.).
   * I want to save/bookmark any post(s) on the site to view later on my profile.
   * I want to be notified on my profile when another user comments on my post(s).
-  
+
 
   ---
 
@@ -71,7 +74,7 @@ As a registered user:
   | --- | --- |
   | Home | View to display each section of the App (I'm looking for. . .), (I can offer . . .) and (Add a Listing) |
   | Landing | View for user when they first enter the App |
-  | Listing | View to display a specific listing and all the details provided by the author including date                                                                      posted/updated. If it is your post a 'delete post' & an 'edit post' button are visible. An 'Add a comment' 
+  | Listing | View to display a specific listing and all the details provided by the author including date                                                                      posted/updated. If it is your post a 'delete post' & an 'edit post' button are visible. An 'Add a comment'
              section,a text input to allow people to leave a  comment on a listing which can be viewed
              only by the sender and the author of the listing. |
   | ListingCard | View of each specific post on the *Listings* page |
@@ -84,8 +87,8 @@ As a registered user:
   | Register | View for user to sign up for the App |
   | Edit profile | view for th euser to edit their profile details |
   | Contact | A page to contact the admins in regards to any query using the website. Showing a form for the user to submit their details and a message stating the query. |
-  
- 
+
+
 
 ## Reducers (Client Side)
 
@@ -122,7 +125,7 @@ As a registered user:
 | Delete | /api/v1/listings/bookmark| Yes | Delete a bookmark          | status 200  |
 | Get    | /api/v1/listings/bookmark/id| Yes | Get your bookmarked listings as a user | Users bookmarked listings |
 | Get    | /api/v1/listings/tag/:id | No  | Get Listings By Tag ID     | Listings that match Tag id |
-| Get    | /api/v1/comms/id         | Yes | Get comments for a listing | Listing with existing comments | 
+| Get    | /api/v1/comms/id         | Yes | Get comments for a listing | Listing with existing comments |
 | Post   | /api/v1/comms/           | Yes | Post a new comment         | status 200 |
 | Post   | /api/v1/comms/           | Yes | Show comment thread        | showing comment thread |
 
@@ -153,7 +156,7 @@ As a registered user:
   | description | String |
   | image | String |
   | time | Timestamp |
-  
+
 ### Comms
   | Column Name | Data Type |
   | --- | --- |
@@ -163,20 +166,20 @@ As a registered user:
   | text | String |
   | time | Timestamp |
   | thread_id | integer |
-  
+
 ### Listings_Tags
   | Column Name | Data Type |
   | --- | --- |
   | id | Integer |
   | listing_id | Integer |
   | tag_id | Integer |
-  
+
 ### Tags (Join Table M2M)
   | Column Name | Data Type |
   | --- | --- |
   | id | Integer |
   | tag_name | String |
-  
+
 ### Users_Listings
   | Column Name | Data Type |
   | --- | --- |
