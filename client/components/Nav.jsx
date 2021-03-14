@@ -9,18 +9,11 @@ const Nav = (props) => {
 
   return (
     <>
-  
       <section className="hero is-dark">
         <div className="hero-head">
           <nav className="navbar">
             <div className="container">
               <div className="navbar-brand">
-                {/* <Link to="/" className="logo">
-                <img src="duckie.png" alt="Logo" />
-              </Link> */}
-                {/* <div className="nav-title-container">
-                <h1 className="nav-title">swopsies</h1>
-              </div> */}
                 <span className="navbar-burger burger" data-target="navbarMenu">
                   <span></span>
                   <span></span>

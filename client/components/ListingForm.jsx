@@ -74,22 +74,10 @@ function ListingForm(props) {
     } else if(!form.description){
       alert("Please add a description to your post.")
     }
-    // } else {
-    //   const newestListing = {
-    //     ...form,
-    //     user_id: props.auth.user.id,
-    //     time: new Date(),
-    //   }
-
-      // const data = {
-      //   listing: newestListing,
-      //   tagId: tag,
-      // }
 
     props.dispatch(newListing(formData))
 
     props.history.push("/")
-
   }
 
   return (

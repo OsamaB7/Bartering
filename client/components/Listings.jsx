@@ -13,7 +13,7 @@ function Listings(props) {
   const [listings, setListings] = useState([{}])
 
   const locations  = ['Auckland', 'Bay of Plenty', 'Canterbury', 'Gisborne', 'Hawke\'s Bay', 'Manawatu-Whanganui', 'Marlborough', 'Nelson', 'Northland', 'Otago', 'Southland', 'Taranaki', 'Tasman', 'Waikato', 'Wellington', 'West Coast']
-  //pagenation
+
 
 
   const [currentPage, setCurrentPage] = useState(0)
@@ -41,12 +41,12 @@ function Listings(props) {
   function handlePageClick({ selected: selectedPage }) {
     setCurrentPage(selectedPage);
   }
-  //pagenation ends
+
 
   const filterListings = () => {
     if (filter === "all") {
       if (locationFilter == 'all') {
-        
+
         setListings(props.listings)
       } else {
         setListings(
@@ -142,7 +142,7 @@ function Listings(props) {
                     </div>
                   </div>
                   </div>
-                  </div> 
+                  </div>
                   <div className="container">
 
                   <div className="card">
@@ -171,8 +171,7 @@ function Listings(props) {
                       activeClassName={"pagination__link--active"}
                     />
                   </div>
-               
-            </div>  
+            </div>
           </div>
         </div>
       </div>
