@@ -166,7 +166,7 @@ function ListingForm(props) {
             />
           </form>
           <div>Add image:
-              <input onChange={handleFileSelect} type='file' />
+              <input className="upload_button" onChange={handleFileSelect} type='file' />
           </div>
 
           <div className="buttons has-addons">

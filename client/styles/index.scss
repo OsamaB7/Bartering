@@ -33,7 +33,7 @@ body {
             display: block;
         }
     }
-    
+
     &__description {
         display: block;
 
@@ -97,7 +97,7 @@ p {
 
 .image-shadow {
     box-shadow: 5px 5px 20px;
-    
+
 }
 
 .row::after {
@@ -136,7 +136,7 @@ p {
  }
  .navbar-dropdown .navbar-item {
    justify-content:left;
- }	
+ }
 
 .section {
   padding: 0;
@@ -179,7 +179,7 @@ p {
     mask-image: linear-gradient(to bottom, black 10%, transparent 90%);
 }
 
-.footer {    
+.footer {
     position: absolute;
     bottom: 0;
     width: 100vw;
@@ -371,6 +371,10 @@ label {
     margin-bottom: 20px;
 }
 
+.upload_button {
+  padding: 20px;
+}
+
 .home-margin {
     margin: 22px 20px 0px 20px;
     padding-bottom: 20px;
@@ -510,7 +514,7 @@ label {
 
   &--right {
     justify-content: flex-end;
-    
+
     p {
       background-color: #d7e4ff;
     }
