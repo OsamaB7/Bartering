@@ -26,7 +26,7 @@ This is a list of tech we will be using throughout our project:
 
 I thought it would be nice if our customers could upload photos to show what they can offer or something else. So I implemented image upload using Multer and Express.
 
-[Multer] (https://www.npmjs.com/package/multer)
+[Multer](https://www.npmjs.com/package/multer)
 ## User Stories
 
 ### MVP
