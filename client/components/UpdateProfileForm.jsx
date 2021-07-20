@@ -2,8 +2,7 @@ import React, { useState } from "react"
 import { connect, useStore } from "react-redux"
 import { updateProfile } from "../actions/auth"
 
-const locations = ['Auckland', 'Bay of Plenty', 'Canterbury', 'Gisborne', 'Hawke\'s Bay', 'Manawatu', 'Marlborough', 'Nelson', 'Northland', 'Otago', 'Southland', 'Taranaki', 'Tasman', 'Waikato', 'Wellington', 'West Coast']
-
+const locations = ['Karachi', 'Lahore', 'Islamabad', 'Faisalabad', 'Rawalpindi', 'Quetta', 'Swat']
 //put user input into state
 //dispatch updateProfile function
 //set new state to updated Profile
