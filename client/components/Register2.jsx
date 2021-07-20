@@ -7,8 +7,7 @@ import { updateProfile } from "../actions/auth"
 function Register2(props) {
   const { auth } = props
 
-  const locations  = ['Auckland', 'Bay of Plenty', 'Canterbury', 'Gisborne', 'Hawke\'s Bay', 'Manawatu', 'Marlborough', 'Nelson', 'Northland', 'Otago', 'Southland', 'Taranaki', 'Tasman', 'Waikato', 'Wellington', 'West Coast']
-
+  const locations  = ['Karachi', 'Lahore', 'Islamabad', 'Faisalabad', 'Rawalpindi', 'Quetta', 'Swat']
   const userId = auth.user.id
 
   const [formData, setFormData] = useState({
